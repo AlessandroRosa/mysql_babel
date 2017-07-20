@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>MySQL Babel - Version 0.0.1</title>
+<style type="text/css">
+body
+{
+    font-family: tahoma;
+}
+
+table
+{
+    border-collapse: collapse;
+    border-top: 1pt solid #000000;
+    border-bottom: 1pt solid #000000;
+    border-left: 1pt solid #000000;
+    border-right: 1pt solid #000000;
+    width:500px;
+    padding: 0pt;
+}
+
+td.title
+{
+    font-family: tahoma;
+    font-size: 22pt;
+    font.weight: bold;
+    background: lightblue;
+    border-bottom: 1pt solid #e3e3e3;
+}
+
+td.subtitle
+{
+    font-family: tahoma;
+    font-size: 12pt;
+    font-weight: bold;
+    text-align:right ;
+    background: blue;
+    color:white;
+    border-bottom: 1pt solid #e3e3e3;
+}
+
+td.author
+{
+    height: 20px;
+    font-family: tahoma;
+    font-size: 10pt;
+    background: white;
+    color: black;
+    border-bottom: 1pt solid #e3e3e3;
+}
+
+td.main
+{
+    font-family: tahoma;
+    font-size: 10pt;
+    padding: 16pt ;
+    background: lightgreen;
+    opacity: 0.8;
+    border-bottom: 1pt solid #e3e3e3;
+}
+
+
+td.footer
+{
+    height: 20px;
+    background: lightgreen;
+    opacity: 0.8;
+}
+
+</style>
+</head>
+<body>
+<table>
+<tr><td class="title">MySQL Babel</td></tr>
+<tr><td class="subtitle">Version 0.0.1</td></tr>
+<tr><td class="author">Coded by <a href="mailto:zandor_zz@yahoo.it">Alessandro Rosa</a></td></tr>
+<tr><td class="main">
+<b>PROLOGUE</b><br/>
+The present page wants to play as descriptive for a PHP class
+devoted to translate input native language commands for database into MYSQL
+commands lines.
+<br/><br/><br/>
+<b>PURPOSES</b><br/>
+The goal of this class is to provide a comfortable code interface to let
+programmers implement forms within their programs so that users can input
+self-defined command lines.
+<br/><br/>
+The pictures below shows two very trivial pages on how the class can be
+implemented to retrieve query results from database, either in Italian
+or in French.<br/><br/>
+Programmers can freely implement as they want. For example, one suggested
+way is evidently prompt-like, so that customers can use the program to
+get their queries.
+<br/><br/>
+<table style="border:0pt;">
+<tr>
+<td><a href="javascript:window.open('shot01.gif','newWnd','')"><img border="1" width="230" src="shot01.gif" /></a></td>
+<td><a href="javascript:window.open('shot02.gif','newWnd','')"><img border="1" width="230" src="shot02.gif" /></a></td>
+</tr>
+<tr><td align="center">SHOT 1</td><td align="center">SHOT 2</td></tr>
+</table>
+<br/><br/>
+After coding several programs for local companies and paying
+attention to customers' requirements, I realized that giving them
+the power to customize their own researches could definitely yield better
+performance to the programs themselves, so that the latter ones open to
+a greater number of possibilities for final users.
+<br/><br/><br/>
+<b>HOW THE CLASS WORKS</b><br/>
+Basically the class analyzes the input line command, tokenizes it and turns into
+a sequence of number-codes for further translation. As this new format is
+given, the translation into the desired languages is then perfomed.<br/>
+Technically the two passage above:
+<br/><br/>
+<center>Original Language -> Number codes -> MySql command line</center>
+<br/>
+are performed via a couple of bi-dimensional arrays including each word
+entry and the associated number code per each row.<br/><br/>
+As the reader would see in the example code INDEX.PHP, class implementation
+shall first set up the input language to be handled by standard two letters
+coding:
+<ul>
+<li><b>it</b> : Italian.</li>
+<li><b>fr</b> : French.</li>
+<li><b>...</b> : any other language to be supported.</li>
+</ul>
+Further operation include the insertion of the original command line, the
+call to the translation routine, finally the run() function whose only
+boolean parameter just orders to display or not the results into a table, whether
+the command line was used to make a selection or a insertion/deletion/update,
+for example.
+<br/><br/><br/>
+<b>CURRENT VERSION</b><br/>
+It is the first one ever coded: the definition number is <b>0.0.1</b>.<br/>
+I think it is stable and freely circulates.<br/>
+Featured languages are still Italian and French.<br/>
+This package includes:
+<ol>
+<li><b>INDEX.PHP</b> : an example of how MYSQL class implements italian.</li>
+<li><b>MYSQL_TRANS.PHP</b> : the code of the class MYSQLtranslator +
+one support class language.</li>
+<li><b>DBEXAMPLE.SQL</b> : SQL code to build up the example environment to
+test the code inside INDEX.PHP</li>
+<li>... the available languages dictionaries.</li>
+</ol>                                 
+<br/><br/><br/>
+<b>TESTING THIS CLASS</b><br/>
+Flush all the PHP code into your server document root. The folders distribution
+shall show up as depicted below:<br/>
+<table style="border:0pt;">
+<tr><td align="center"><img border="1" src="shot03.gif" /></td></tr>
+</table>
+<br/>
+<ul>
+<li>Open your mysql shell.</li>
+<li>Load the file <b>DBEXAMPLE.SQL</b> via this parametrized command
+line (fill % fields according to your OS configuration):<br/>
+<b>SOURCE %UNIT%\%SERVERROOT%\DBEXAMPLE.SQL</b></li>
+<li>Load the file index.php from your browser to see shot 02 coming up on
+your screen.</li>
+</ul>
+<br/><br/>
+<b>INVITATION TO PROGRAMMERS</b><br/>
+My intention is to freely share this code with the world community in accordance
+to open-source licence so that it might be developed along these two directions
+(others are welcomed):
+<ul>
+<li><b>INCREMENT</b> the number of <b>languages</b> by the help of native
+or skilled programmers who do want to join this development.</li>
+<li><b>IMPROVE</b> languages translation processing code.</li>
+</ul>
+<br/><br/><br/>
+<b>CONCLUSIONS</b><br/>
+I apologize myself for my raw english. I can be contacted by clicking on this <a href="mailto:zandor_zz@yahoo.it">e-mail link</a>.
+</td></tr>
+<tr><td class="footer"></td></tr>
+</table>
+</body>
+</html>

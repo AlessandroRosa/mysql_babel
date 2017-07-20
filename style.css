@@ -1,0 +1,26 @@
+table.example1
+{
+    border: 1px solid blue;
+}
+
+tr.example1header
+{
+    background-color: #CC0000 ;
+}
+
+td.example1header
+{
+    font-family: arial;
+    font-size:10pt;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+}
+
+td.example1row
+{
+    border: 1px solid #00CC00;
+    background-color: #FFFFFF ;
+    font-family: arial;
+    font-size:8pt;
+}
